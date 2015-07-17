@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'mkmf'
+
+extension_name = 'sandvox'
+
+dir_config(extension_name)
+create_makefile(extension_name)
+
+`make`
+
+require "./sandvox"
+
+require "irb"
+IRB.start
